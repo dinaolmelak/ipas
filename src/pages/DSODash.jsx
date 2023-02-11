@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from "react";
-import firebaseConfig from "../resources/FirebaseConfig";
+import firebaseConfig from "./resources/FirebaseConfig";
 import {getFirestore, collection, query, where, getDocs} from "firebase/firestore";
-import StudentCell from "..//StudentCell";
+import StudentCell from "./StudentCell";
 
 const infoStorageKey = "ipas_info";
 

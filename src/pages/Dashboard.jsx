@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import firebaseConfig from "./resources/FirebaseConfig";
 import { getAuth, signOut,onAuthStateChanged } from "firebase/auth";
 import { getFirestore,doc,getDoc } from "firebase/firestore";
-import StudentDash from ".//userDashboard/StudentDash";
-import DSODash from ".//userDashboard/DSODash";
+import StudentDash from "./StudentDash";
+import DSODash from "./DSODash";
 
 
 const auth = getAuth(firebaseConfig);
@@ -52,9 +52,9 @@ const Dashboard = () => {
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
-            if (!user) {
+            if (user == null) {
                 navigate("/");
-                window.location.href = "/";
+                
             }else{
                 setUserId(user.uid);
                 

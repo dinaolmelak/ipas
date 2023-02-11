@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import firebaseConfig from "./resources/FirebaseConfig";
 // TODO: Add SDKs for Firebase products that you want to use
 import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import "./Dashboard";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,15 +18,18 @@ const SignIn = () => {
   const [isSignIn, setIsSignIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
+  const goToDashboard = () => {
+    navigate('/dashboard');
+  }
+
   useEffect(() => {
     if(isSignIn){
         console.log("isSignIn: " + isSignIn);
-        navigate({ pathname: '/dashboard'});
-        window.location.href = "/dashboard";
+        goToDashboard();
     }
     
-  }, [isSignIn, navigate]);
+  }, [isSignIn]);
   
   const handleSignIn = (email,password) => {
     console.log("Sign In button clicked!");

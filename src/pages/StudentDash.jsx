@@ -1,9 +1,8 @@
 import {React} from "react";
 import {getStorage, ref, uploadBytes} from "firebase/storage";
-import firebaseConfig from "..//resources/FirebaseConfig";
-import DocList from "../DocList";
-import "/Users/dinaoltadesse/Desktop/iPAS/ipas_web/src/assets/css/StudentDash.css"
-
+import firebaseConfig from "./resources/FirebaseConfig";
+import DocList from "./DocList";
+import "..//assets/css/StudentDash.css"
 
 const StudentDash = ({studentInfo, signUserOut}) => {
     

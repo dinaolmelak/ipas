@@ -18,12 +18,18 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [isSignIn, setIsSignIn] = useState(false);
   //const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
+
+  
   useEffect(() => {
+    const goToDashboard = () => {
+      navigate('/dashboard');
+    }
     if(isSignIn){
         console.log("isSignIn: " + isSignIn);
-        window.location.href = "/dashboard?isStudentDash={isStudent}";
+        goToDashboard();
     }
-  }, [isSignIn]);
+  }, [isSignIn, navigate]);
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [jNumber, setJNumber] = useState("");
@@ -32,6 +38,8 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   
+  
+
   const storeInFirestore = async (accountUserId, emailInput,firstName,lastName,jNumber,isStudent) => {
         //const docRef = collection(db, "users")
         try{
@@ -111,15 +119,12 @@ const SignUp = () => {
 
             <button className="button3" onClick={
               () => {
-                navigate({ pathname: '/'});
+                navigate("/");
               }
             }>Back to Home</button>
 
           </div>
         }
-      {
-        //isSignedIn ? <p>Sign Out</p> : <p>Sign In</p>
-      }
     </div>
   );
 };

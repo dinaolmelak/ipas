@@ -77,9 +77,11 @@ const DocList = ({userInfo})  => {
             {
             studentDocList && Object.entries(studentDocList).map(([key,value]) => (
                 <ul key={key}>
-                   <h4>
-                    <a href={studentDocList[key][1]}> {studentDocList[key][0]}</a>
-                    <h5>Uploaded on: {readableDate(studentDocList[key][2].timeCreated)}</h5>
+                   <h4> <a href={studentDocList[key][1]}> {studentDocList[key][0]}</a>
+                    <br></br>
+                    <div>   
+                        <h5>Uploaded on: {readableDate(studentDocList[key][2].timeCreated)}</h5>
+                    </div>
                     </h4> 
                 </ul>
             ))

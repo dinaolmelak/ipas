@@ -1,6 +1,10 @@
 import {React} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 //import SignInOrSignUp from './SignInOrSignUp';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
+import Dashboard from './Dashboard';
 
 
 const HomePage = () => {
@@ -34,7 +38,7 @@ const HomePage = () => {
           <p>Here you can sign in or sign up to access your web portal!</p>
           
           <div className='container'>
-            <button className='button1' onClick={goToSignIn}>Sign In</button><br></br>
+            <button className='button1' onClick={goToSignIn}>Sign In</button>
             <button className='button1' onClick={goToSignUp}>Sign Up</button>
           </div>
 
